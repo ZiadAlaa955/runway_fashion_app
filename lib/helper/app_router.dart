@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:runway_fashion_app/Views/home_view.dart';
 import 'package:runway_fashion_app/Views/splash_view.dart';
 
 class AppRouter {
@@ -11,10 +12,10 @@ class AppRouter {
         path: splashRoute,
         builder: (context, state) => const SplashView(),
       ),
-      // GoRoute(
-      //   path: homeRoute,
-      //   builder: (context, state) => const Placeholder(),
-      // ),
+      GoRoute(
+        path: homeRoute,
+        builder: (context, state) => const HomeView(),
+      ),
     ],
   );
 }
