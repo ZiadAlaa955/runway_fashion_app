@@ -17,9 +17,11 @@ class _HomeVideoState extends State<HomeVideo> {
         VideoPlayerController.asset('assets/videos/runway_video.mov')
           ..initialize().then(
             (value) {
-              setState(() {
-                videoController.play();
-              });
+              setState(
+                () {
+                  videoController.play();
+                },
+              );
             },
           )
           ..setLooping(true);

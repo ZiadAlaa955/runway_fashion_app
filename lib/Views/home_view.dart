@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:runway_fashion_app/Widgets/categories_list_view.dart';
 import 'package:runway_fashion_app/Widgets/custom_app_bar.dart';
+import 'package:runway_fashion_app/Widgets/home_bottom_navigation_bar.dart';
 import 'package:runway_fashion_app/Widgets/home_video.dart';
 
 class HomeView extends StatelessWidget {
@@ -9,13 +10,13 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(
+    return const Scaffold(
+      appBar: CustomAppBar(
         title: 'Runway',
         prefixIcon: 'assets/images/icons/menu.svg',
         suffixIcon: 'assets/images/icons/notification.svg',
       ),
-      body: const Column(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HomeVideo(),
@@ -23,28 +24,7 @@ class HomeView extends StatelessWidget {
           CategoriesListView(),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.black,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Likes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag),
-            label: 'Bag',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      bottomNavigationBar: HomeBottomNavigationBar(),
     );
   }
 }

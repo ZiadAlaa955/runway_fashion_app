@@ -26,16 +26,24 @@ class _SplashViewState extends State<SplashView>
       duration: const Duration(seconds: 2),
     );
 
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero).animate(
-      CurvedAnimation(parent: animationController, curve: Curves.easeOut),
+    slidingAnimation = Tween<Offset>(
+      begin: const Offset(-1, 0),
+      end: Offset.zero,
+    ).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.easeOut,
+      ),
     );
 
     fadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(
-      CurvedAnimation(parent: animationController, curve: Curves.easeIn),
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.easeIn,
+      ),
     );
 
     animationController.forward();
