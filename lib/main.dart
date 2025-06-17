@@ -12,6 +12,16 @@ class RunwayFashionApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.white,
+        ),
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          scrolledUnderElevation: 0,
+          color: Colors.white,
+        ),
+      ),
       routerConfig: AppRouter.router,
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:runway_fashion_app/Models/category_model.dart';
+import 'package:runway_fashion_app/helper/app_router.dart';
 
 class CategoriesListView extends StatelessWidget {
   const CategoriesListView({super.key});
@@ -55,10 +57,15 @@ class CategoriesListView extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 10),
                   child: Column(
                     children: [
-                      CircleAvatar(
-                        radius: 40,
-                        child: Image.asset(
-                          categories[index].image,
+                      GestureDetector(
+                        onTap: () {
+                          GoRouter.of(context).push(AppRouter.menCategoryRoute);
+                        },
+                        child: CircleAvatar(
+                          radius: 40,
+                          backgroundImage: AssetImage(
+                            categories[index].image,
+                          ),
                         ),
                       ),
                       const Gap(5),

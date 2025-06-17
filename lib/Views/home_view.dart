@@ -17,11 +17,13 @@ class HomeView extends StatelessWidget {
         suffixIcon: 'assets/images/icons/notification.svg',
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           HomeVideo(),
-          Gap(10),
+          // Spacer(),
           CategoriesListView(),
+          Gap(20),
         ],
       ),
       bottomNavigationBar: HomeBottomNavigationBar(),
